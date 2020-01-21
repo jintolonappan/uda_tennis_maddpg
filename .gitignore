@@ -1,0 +1,9 @@
+*.log
+*.zip
+
+Soccer.ipynb
+
+.ipynb_checkpoints/
+rl/
+temp/
+wip/
