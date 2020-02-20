@@ -25,7 +25,7 @@ In the algorithm, we make use of the concept of REINFORCE where a reward > basel
 As part of the Actor network, we will be determining the Q function. Actor network will be updated based on the action.\
 In DDPG, we also make use of a ReplayBuffer as in DQN. Actions will be determined based on random exploitaion from the ReplayBuffer. This will also help in avoiding the agent learning continuous sequential actions.\
 We also make use of Ornstein–Uhlenbeck noise process so that the network can 'explore' the observation space for any actions. This is implemented by adding the OU Noise to action value returned from the network.\
-As in the paper, we will be using Adam _([Adam: A Method for Stochastic Optimization - arXiv:1412.6980v9 [cs.LG]](https://arxiv.org/pdf/1412.6980.pdf))_ algorithm to optimize the networks.\
+As in the paper, we will be using Adam _([Adam: A Method for Stochastic Optimization - arXiv:1412.6980v9 [cs.LG]](https://arxiv.org/pdf/1412.6980.pdf))_ algorithm to optimize the networks.
 
 ### Model Architecture
 As per the DDPG paper, four networks were used:
@@ -58,14 +58,14 @@ Below hyper parameters were used:
 
 ```
 SEED                = 0
-REPLAY_BUFFER_SIZE  = 1e+6
-ACTOR_LR            = 1e-4
-CRITIC_LR           = 1e-3 
-GAMMA               = 0.99
+REPLAY_BUFFER_SIZE  = 1e+6 # DDPG Paper = 1e+6
+ACTOR_LR            = 1e-4 # DDPG Paper = 1e-4
+CRITIC_LR           = 1e-3 # DDPG Paper = 1e-3
+GAMMA               = 0.99 # DDPG Paper = 0.99
 TAU                 = 1e-2 # DDPG Paper = 1e-3
 BATCH_SIZE          = 512  # DDPG Paper = 32
 WEIGHT_DECAY        = 0    # DDPG Paper = 1e-2
-Hidden Network Nodes = [256, 128] # DDPG Paper = [400, 300]
+HIDDEN_NODES        = [256, 128] # DDPG Paper = 400, 300
 ```
 
 ### Training Progress
@@ -94,7 +94,7 @@ Training completed. Models saved.
 
 ### Attempts to go higher than the defined 0.5 goal
 Using the same hyper parameters, tried to obtain a higher reward by using 2500 and 3000 episodes.
-The maximum running average over 100 episodes was an impressive **+1.71**.
+The maximum running average over 100 episodes was an impressive **+1.71**.\
 As the same SEED value were used, the performance was consistent across runs.
 
 #### Attempt 1: 2500 episodes
@@ -186,6 +186,8 @@ Checkpoint was also saved at the end of training. This final version of checkpoi
 ![Agent](images/tennis_in_action.gif)
 
 `Ball was bounced for a total of 52 times by both players.`
+
+Full demo video is available [here](images/gameplay.mp4")
 
 ### Hyper Parameter Tuning
 As you may notice, some of the hyper parameters were modified from the original DDPG paper. 
