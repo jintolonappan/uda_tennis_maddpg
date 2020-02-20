@@ -37,21 +37,21 @@ As per the DDPG paper, four networks were used:
 Below are the structures for #1 and #3 (Actor):
 ```
 Actor(
-  (inp): Linear(in_features=33, out_features=330, bias=True)
-  (h1): Linear(in_features=330, out_features=160, bias=True)
-  (out): Linear(in_features=160, out_features=4, bias=True)
+  (inp): Linear(in_features=24, out_features=256, bias=True)
+  (h1): Linear(in_features=256, out_features=128, bias=True)
+  (out): Linear(in_features=128, out_features=2, bias=True)
 )
 ```
 
 Below are the structures for #2 and #4 (Critic):
 ```
 Critic(
-  (inp): Linear(in_features=33, out_features=330, bias=True)
-  (h1): Linear(in_features=334, out_features=160, bias=True)
-  (out): Linear(in_features=160, out_features=1, bias=True)
+  (inp): Linear(in_features=24, out_features=256, bias=True)
+  (h1): Linear(in_features=258, out_features=128, bias=True)
+  (out): Linear(in_features=128, out_features=1, bias=True)
 )
 ```
-<sub>Actions (4) were added to hidden layer as per DDPG paper</sub>
+<sub>Actions (2) were added to hidden layer as per DDPG paper</sub>
 
 ### Hyper Parameters 
 Below hyper parameters were used:
