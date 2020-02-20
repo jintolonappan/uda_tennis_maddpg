@@ -208,6 +208,7 @@ Hidden Network Nodes = [400, 300]
 ```
 #### Hyper Params from Paper - Training Progress
 The training didnt yeild any learning even after _2500_ episodes.
+![TrainingPlot](images/tennis_ddpg_orighyps.png)
 
 ```
 Target Goal: 0.5
